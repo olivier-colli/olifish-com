@@ -1,0 +1,1326 @@
+
+            <!DOCTYPE html>
+<html itemscope itemtype=http://schema.org/WebPage lang=fr>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<title>Olifish : Olivier Colli's galleries</title>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-108901544-1"
+></script>
+
+            <style>body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #f7f8fa;
+    width: 100%;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #9fa6b5;
+}
+header {
+    position: fixed;
+    width: 100%;
+    background: #2e4e72;
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+}
+header h1 {
+    line-height: 0.2em;
+    color: #ddd;
+}
+header .contact,
+header .lang {
+    font-size: 1.2em;
+    line-height: 2.5em;
+}
+header input {
+    margin: 0.5em;
+    border-radius: 25px;
+    background: #ddd;
+    text-indent: 1em;
+    height: 2em;
+    width: 20em;
+    font-size: 0.8em;
+}
+
+section,
+div.fish {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+div.fish {
+    padding-top: 3em;
+}
+section.gallery {
+    padding: 5em;
+    padding-top: 1em;
+}
+section.gallery h2 {
+    width: 100%;
+    color: #333;
+}
+img,
+figure.home,
+header input,
+header {
+    box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.73);
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.73);
+}
+.img p {
+    margin: 0;
+    text-align: center;
+}
+figure {
+    margin: 1em;
+    font-size: 1em;
+    text-align: center;
+}
+figure figcaption,
+figure figcaption a:link,
+figure figcaption a:visited {
+    color: #aaa;
+    font-style: italic;
+}
+figure h3 {
+    font-weight: lighter;
+    color: #71767a;
+    margin: 0 1em;
+}
+</style>
+            <script>window.dataLayer = window.dataLayer || []
+function gtag() {
+    dataLayer.push(arguments)
+}
+gtag('js', new Date())
+gtag('config', 'UA-108901544-1')
+
+window.addEventListener('DOMContentLoaded', () => {
+    window.onsubmit = event => {
+        event.preventDefault()
+        const query = document.querySelector('input').value
+        document.location.href = `/./galleries/#${slugify(query)}`
+    }
+})
+
+const slugify = text => {
+    const a = 'àáäâèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
+    const b = 'aaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
+    const p = new RegExp(a.split('').join('|'), 'g')
+
+    return text
+        .toString()
+        .toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with -
+        .replace(p, c => b.charAt(a.indexOf(c))) // Replace special chars
+        .replace(/&/g, '-and-') // Replace & with 'and'
+        .replace(/[^\w-]+/g, '') // Remove all non-word chars
+        .replace(/--+/g, '-') // Replace multiple - with single -
+        .replace(/^-+/, '') // Trim - from start of text
+        .replace(/-+$/, '') // Trim - from end of text
+}
+</script>
+            <script src=/vendors/photoswipe/dist/photoswipe.min.js></script>
+<script src=/vendors/photoswipe/dist/photoswipe-ui-default.min.js></script>
+
+<script src=/assets/photoswipe.js></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', evt => {
+        photoSwipe.init()  
+    })
+</script>
+
+<link rel=stylesheet href=/vendors/photoswipe/dist/photoswipe.css>
+<link rel=stylesheet href=/vendors/photoswipe/dist/default-skin/default-skin.css>
+
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+    <div class=pswp__bg></div>
+    <div class=pswp__scroll-wrap>
+        <div class=pswp__container>
+            <div class=pswp__item></div>
+            <div class=pswp__item></div>
+            <div class=pswp__item></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <header>
+    <h1><a href="/">OliFish</a></h1>
+    <form action=/ method=get>
+        <input type=text placeholder=Search>
+    </form>
+    <div class="lang">
+        <a href=https://www.olifish.com>EN -</a>
+        <a href=https://www.olifish.fr>FR -</a>
+        <a href=https://www.olifish.de>DE -</a>
+        <a href=https://www.olifish.es>ES</a>
+    </div>
+</header>
+            <div class="body">
+    <div class=fish><figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Argus Grouper - <em>Cephalopholis argus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-163.jpg">
+    <img itemprop="thumbnail" alt="Argus Grouper - Cephalopholis argus" data-id="0" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-163.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cephalopholis">Cephalopholis</a> <a href="/./galleries/#argus">argus</a></figcaption>   
+    <h3><a href="/./galleries/#argus">Argus</a> <a href="/./galleries/#grouper">Grouper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bald glassy - <em>Ambassis gymnocephalus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-209.jpg">
+    <img itemprop="thumbnail" alt="Bald glassy - Ambassis gymnocephalus" data-id="1" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-209.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#ambassis">Ambassis</a> <a href="/./galleries/#gymnocephalus">gymnocephalus</a></figcaption>   
+    <h3><a href="/./galleries/#bald">Bald</a> <a href="/./galleries/#glassy">glassy</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Big-eye bream - <em>Monotaxis grandoculis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-248.jpg">
+    <img itemprop="thumbnail" alt="Big-eye bream - Monotaxis grandoculis" data-id="2" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-248.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#monotaxis">Monotaxis</a> <a href="/./galleries/#grandoculis">grandoculis</a></figcaption>   
+    <h3><a href="/./galleries/#big-eye">Big-eye</a> <a href="/./galleries/#bream">bream</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluespotted ribbontail ray - <em>Taeniura lymma</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-254.jpg">
+    <img itemprop="thumbnail" alt="Bluespotted ribbontail ray - Taeniura lymma" data-id="3" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-254.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#taeniura">Taeniura</a> <a href="/./galleries/#lymma">lymma</a></figcaption>   
+    <h3><a href="/./galleries/#bluespotted">Bluespotted</a> <a href="/./galleries/#ribbontail">ribbontail</a> <a href="/./galleries/#ray">ray</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluetail trunkfish - <em>Ostracion cyanurus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-273.jpg">
+    <img itemprop="thumbnail" alt="Bluetail trunkfish - Ostracion cyanurus" data-id="4" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-273.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#ostracion">Ostracion</a> <a href="/./galleries/#cyanurus">cyanurus</a></figcaption>   
+    <h3><a href="/./galleries/#bluetail">Bluetail</a> <a href="/./galleries/#trunkfish">trunkfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Brownspotted spinefoot - <em>Siganus stellatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-255.jpg">
+    <img itemprop="thumbnail" alt="Brownspotted spinefoot - Siganus stellatus" data-id="5" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-255.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#siganus">Siganus</a> <a href="/./galleries/#stellatus">stellatus</a></figcaption>   
+    <h3><a href="/./galleries/#brownspotted">Brownspotted</a> <a href="/./galleries/#spinefoot">spinefoot</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Common spider conch - <em>Lambis lambis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-239.jpg">
+    <img itemprop="thumbnail" alt="Common spider conch - Lambis lambis" data-id="6" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-239.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#lambis">Lambis</a> <a href="/./galleries/#lambis">lambis</a></figcaption>   
+    <h3><a href="/./galleries/#common">Common</a> <a href="/./galleries/#spider">spider</a> <a href="/./galleries/#conch">conch</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Dusky Sailfin Tang - <em>Zebrasoma xanthurum</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-232.jpg">
+    <img itemprop="thumbnail" alt="Dusky Sailfin Tang - Zebrasoma xanthurum" data-id="7" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-232.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#zebrasoma">Zebrasoma</a> <a href="/./galleries/#xanthurum">xanthurum</a></figcaption>   
+    <h3><a href="/./galleries/#dusky">Dusky</a> <a href="/./galleries/#sailfin">Sailfin</a> <a href="/./galleries/#tang">Tang</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Elegant Unicornfish - <em>Naso elegans</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-289.jpg">
+    <img itemprop="thumbnail" alt="Elegant Unicornfish - Naso elegans" data-id="8" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-289.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#naso">Naso</a> <a href="/./galleries/#elegans">elegans</a></figcaption>   
+    <h3><a href="/./galleries/#elegant">Elegant</a> <a href="/./galleries/#unicornfish">Unicornfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Forster's Hawkfish - <em>Paracirrhites forsteri</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-213.jpg">
+    <img itemprop="thumbnail" alt="Forster's Hawkfish - Paracirrhites forsteri" data-id="9" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-213.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#paracirrhites">Paracirrhites</a> <a href="/./galleries/#forsteri">forsteri</a></figcaption>   
+    <h3><a href="/./galleries/#forsters">Forster's</a> <a href="/./galleries/#hawkfish">Hawkfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Forster's Hawkfish - <em>Paracirrhites forsteri</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-296.jpg">
+    <img itemprop="thumbnail" alt="Forster's Hawkfish - Paracirrhites forsteri" data-id="10" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-296.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#paracirrhites">Paracirrhites</a> <a href="/./galleries/#forsteri">forsteri</a></figcaption>   
+    <h3><a href="/./galleries/#forsters">Forster's</a> <a href="/./galleries/#hawkfish">Hawkfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Fourline wrasse - <em>larabicus quadrilineatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-207.jpg">
+    <img itemprop="thumbnail" alt="Fourline wrasse - larabicus quadrilineatus" data-id="11" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-207.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#larabicus">larabicus</a> <a href="/./galleries/#quadrilineatus">quadrilineatus</a></figcaption>   
+    <h3><a href="/./galleries/#fourline">Fourline</a> <a href="/./galleries/#wrasse">wrasse</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Golden butterflyfish - <em>Chaetodon semilarvatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-250.jpg">
+    <img itemprop="thumbnail" alt="Golden butterflyfish - Chaetodon semilarvatus" data-id="12" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-250.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chaetodon">Chaetodon</a> <a href="/./galleries/#semilarvatus">semilarvatus</a></figcaption>   
+    <h3><a href="/./galleries/#golden">Golden</a> <a href="/./galleries/#butterflyfish">butterflyfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Heavybeak parrotfish - <em>Chlorurus gibbus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-165.jpg">
+    <img itemprop="thumbnail" alt="Heavybeak parrotfish - Chlorurus gibbus" data-id="13" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-165.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chlorurus">Chlorurus</a> <a href="/./galleries/#gibbus">gibbus</a></figcaption>   
+    <h3><a href="/./galleries/#heavybeak">Heavybeak</a> <a href="/./galleries/#parrotfish">parrotfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Masked puffer - <em>Arothron diadematus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-159.jpg">
+    <img itemprop="thumbnail" alt="Masked puffer - Arothron diadematus" data-id="14" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-159.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#arothron">Arothron</a> <a href="/./galleries/#diadematus">diadematus</a></figcaption>   
+    <h3><a href="/./galleries/#masked">Masked</a> <a href="/./galleries/#puffer">puffer</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Orange-lined triggerfish - <em>Balistapus undulatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-148.jpg">
+    <img itemprop="thumbnail" alt="Orange-lined triggerfish - Balistapus undulatus" data-id="15" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-148.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#balistapus">Balistapus</a> <a href="/./galleries/#undulatus">undulatus</a></figcaption>   
+    <h3><a href="/./galleries/#orange-lined">Orange-lined</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Paletail damsel - <em>Pomacentrus trichourus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-202.jpg">
+    <img itemprop="thumbnail" alt="Paletail damsel - Pomacentrus trichourus" data-id="16" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-202.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pomacentrus">Pomacentrus</a> <a href="/./galleries/#trichourus">trichourus</a></figcaption>   
+    <h3><a href="/./galleries/#paletail">Paletail</a> <a href="/./galleries/#damsel">damsel</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Picasso triggerfish - <em>Rhinecanthus assasi</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-221.jpg">
+    <img itemprop="thumbnail" alt="Picasso triggerfish - Rhinecanthus assasi" data-id="17" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-221.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#rhinecanthus">Rhinecanthus</a> <a href="/./galleries/#assasi">assasi</a></figcaption>   
+    <h3><a href="/./galleries/#picasso">Picasso</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea bannerfish - <em>Heniochus intermedius</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-137.jpg">
+    <img itemprop="thumbnail" alt="Red Sea bannerfish - Heniochus intermedius" data-id="18" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-137.jpg" style="width: 297px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#heniochus">Heniochus</a> <a href="/./galleries/#intermedius">intermedius</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#bannerfish">bannerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-252.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="19" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-252.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Paletail damsel - <em>Pomacentrus trichourus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-206.jpg">
+    <img itemprop="thumbnail" alt="Paletail damsel - Pomacentrus trichourus" data-id="20" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-206.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pomacentrus">Pomacentrus</a> <a href="/./galleries/#trichourus">trichourus</a></figcaption>   
+    <h3><a href="/./galleries/#paletail">Paletail</a> <a href="/./galleries/#damsel">damsel</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Picasso triggerfish - <em>Rhinecanthus assasi</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-223.jpg">
+    <img itemprop="thumbnail" alt="Picasso triggerfish - Rhinecanthus assasi" data-id="21" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-223.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#rhinecanthus">Rhinecanthus</a> <a href="/./galleries/#assasi">assasi</a></figcaption>   
+    <h3><a href="/./galleries/#picasso">Picasso</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red  sponge - <em>Didemnum rubeum</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-210.jpg">
+    <img itemprop="thumbnail" alt="Red  sponge - Didemnum rubeum" data-id="22" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-210.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#didemnum">Didemnum</a> <a href="/./galleries/#rubeum">rubeum</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#"></a> <a href="/./galleries/#sponge">sponge</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Redtoothed triggerfish - <em>Odonus niger</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-284.jpg">
+    <img itemprop="thumbnail" alt="Redtoothed triggerfish - Odonus niger" data-id="23" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-284.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#odonus">Odonus</a> <a href="/./galleries/#niger">niger</a></figcaption>   
+    <h3><a href="/./galleries/#redtoothed">Redtoothed</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em>Salpidae</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-141.jpg">
+    <img itemprop="thumbnail" alt=" - Salpidae" data-id="24" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-141.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#salpidae">Salpidae</a></figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Twoband anemonefish - <em>Amphiprion bicinctus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-278.jpg">
+    <img itemprop="thumbnail" alt="Twoband anemonefish - Amphiprion bicinctus" data-id="25" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-278.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amphiprion">Amphiprion</a> <a href="/./galleries/#bicinctus">bicinctus</a></figcaption>   
+    <h3><a href="/./galleries/#twoband">Twoband</a> <a href="/./galleries/#anemonefish">anemonefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em>Salpidae</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-140.jpg">
+    <img itemprop="thumbnail" alt=" - Salpidae" data-id="26" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-140.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#salpidae">Salpidae</a></figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Broom filefish - <em>Amanses scopas</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-160.jpg">
+    <img itemprop="thumbnail" alt="Broom filefish - Amanses scopas" data-id="27" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-160.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amanses">Amanses</a> <a href="/./galleries/#scopas">scopas</a></figcaption>   
+    <h3><a href="/./galleries/#broom">Broom</a> <a href="/./galleries/#filefish">filefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Indian mackerel - <em>Rastrelliger kanagurta</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-146.jpg">
+    <img itemprop="thumbnail" alt="Indian mackerel - Rastrelliger kanagurta" data-id="28" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-146.jpg" style="width: 300px; height: 183px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#rastrelliger">Rastrelliger</a> <a href="/./galleries/#kanagurta">kanagurta</a></figcaption>   
+    <h3><a href="/./galleries/#indian">Indian</a> <a href="/./galleries/#mackerel">mackerel</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea bannerfish - <em>Heniochus intermedius</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-249.jpg">
+    <img itemprop="thumbnail" alt="Red Sea bannerfish - Heniochus intermedius" data-id="29" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-249.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#heniochus">Heniochus</a> <a href="/./galleries/#intermedius">intermedius</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#bannerfish">bannerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red lionfish - <em>Pterois volitans</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-150.jpg">
+    <img itemprop="thumbnail" alt="Red lionfish - Pterois volitans" data-id="30" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-150.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pterois">Pterois</a> <a href="/./galleries/#volitans">volitans</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#lionfish">lionfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Redtoothed triggerfish - <em>Odonus niger</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-283.jpg">
+    <img itemprop="thumbnail" alt="Redtoothed triggerfish - Odonus niger" data-id="31" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-283.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#odonus">Odonus</a> <a href="/./galleries/#niger">niger</a></figcaption>   
+    <h3><a href="/./galleries/#redtoothed">Redtoothed</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Sea goldie - <em>Pseudanthias squamipinnis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-190.jpg">
+    <img itemprop="thumbnail" alt="Sea goldie - Pseudanthias squamipinnis" data-id="32" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-190.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pseudanthias">Pseudanthias</a> <a href="/./galleries/#squamipinnis">squamipinnis</a></figcaption>   
+    <h3><a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#goldie">goldie</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Speckled sandperch - <em>Parapercis hexophtalma</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-225.jpg">
+    <img itemprop="thumbnail" alt="Speckled sandperch - Parapercis hexophtalma" data-id="33" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-225.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#parapercis">Parapercis</a> <a href="/./galleries/#hexophtalma">hexophtalma</a></figcaption>   
+    <h3><a href="/./galleries/#speckled">Speckled</a> <a href="/./galleries/#sandperch">sandperch</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Tentacled flathead - <em>Papilloculiceps longiceps</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-173.jpg">
+    <img itemprop="thumbnail" alt="Tentacled flathead - Papilloculiceps longiceps" data-id="34" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-173.jpg" style="width: 300px; height: 185px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#papilloculiceps">Papilloculiceps</a> <a href="/./galleries/#longiceps">longiceps</a></figcaption>   
+    <h3><a href="/./galleries/#tentacled">Tentacled</a> <a href="/./galleries/#flathead">flathead</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Vermilion hind - <em>Cephalopholis oligosticta</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-180.jpg">
+    <img itemprop="thumbnail" alt="Vermilion hind - Cephalopholis oligosticta" data-id="35" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-180.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cephalopholis">Cephalopholis</a> <a href="/./galleries/#oligosticta">oligosticta</a></figcaption>   
+    <h3><a href="/./galleries/#vermilion">Vermilion</a> <a href="/./galleries/#hind">hind</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Whitetail dascyllus - <em>Dascyllus aruanus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-246.jpg">
+    <img itemprop="thumbnail" alt="Whitetail dascyllus - Dascyllus aruanus" data-id="36" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-246.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#dascyllus">Dascyllus</a> <a href="/./galleries/#aruanus">aruanus</a></figcaption>   
+    <h3><a href="/./galleries/#whitetail">Whitetail</a> <a href="/./galleries/#dascyllus">dascyllus</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellow-spotted triggerfish - <em>Pseudobalistes fuscus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-292.jpg">
+    <img itemprop="thumbnail" alt="Yellow-spotted triggerfish - Pseudobalistes fuscus" data-id="37" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-292.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pseudobalistes">Pseudobalistes</a> <a href="/./galleries/#fuscus">fuscus</a></figcaption>   
+    <h3><a href="/./galleries/#yellow-spotted">Yellow-spotted</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="net fire coral - <em>Millepora dichotoma</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-166.jpg">
+    <img itemprop="thumbnail" alt="net fire coral - Millepora dichotoma" data-id="38" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-166.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#millepora">Millepora</a> <a href="/./galleries/#dichotoma">dichotoma</a></figcaption>   
+    <h3><a href="/./galleries/#net">net</a> <a href="/./galleries/#fire">fire</a> <a href="/./galleries/#coral">coral</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-152.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="39" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-152.jpg" style="width: 273px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-267.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="40" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-267.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-263.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="41" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-263.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Atlantic Lizardfish - <em>Synodus saurus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-151.jpg">
+    <img itemprop="thumbnail" alt="Atlantic Lizardfish - Synodus saurus" data-id="42" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-151.jpg" style="width: 300px; height: 189px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#synodus">Synodus</a> <a href="/./galleries/#saurus">saurus</a></figcaption>   
+    <h3><a href="/./galleries/#atlantic">Atlantic</a> <a href="/./galleries/#lizardfish">Lizardfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Chocolatedip chromis - <em>Chromis dimidiata</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-155.jpg">
+    <img itemprop="thumbnail" alt="Chocolatedip chromis - Chromis dimidiata" data-id="43" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-155.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chromis">Chromis</a> <a href="/./galleries/#dimidiata">dimidiata</a></figcaption>   
+    <h3><a href="/./galleries/#chocolatedip">Chocolatedip</a> <a href="/./galleries/#chromis">chromis</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Chocolatedip chromis - <em>Chromis dimidiata</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-139.jpg">
+    <img itemprop="thumbnail" alt="Chocolatedip chromis - Chromis dimidiata" data-id="44" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-139.jpg" style="width: 140px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chromis">Chromis</a> <a href="/./galleries/#dimidiata">dimidiata</a></figcaption>   
+    <h3><a href="/./galleries/#chocolatedip">Chocolatedip</a> <a href="/./galleries/#chromis">chromis</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Clown coris - <em>Coris aygula</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-288.jpg">
+    <img itemprop="thumbnail" alt="Clown coris - Coris aygula" data-id="45" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-288.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#coris">Coris</a> <a href="/./galleries/#aygula">aygula</a></figcaption>   
+    <h3><a href="/./galleries/#clown">Clown</a> <a href="/./galleries/#coris">coris</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Dusky Sailfin Tang - <em>Zebrasoma xanthurum</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-227.jpg">
+    <img itemprop="thumbnail" alt="Dusky Sailfin Tang - Zebrasoma xanthurum" data-id="46" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-227.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#zebrasoma">Zebrasoma</a> <a href="/./galleries/#xanthurum">xanthurum</a></figcaption>   
+    <h3><a href="/./galleries/#dusky">Dusky</a> <a href="/./galleries/#sailfin">Sailfin</a> <a href="/./galleries/#tang">Tang</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Forster's Hawkfish - <em>Paracirrhites forsteri</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-194.jpg">
+    <img itemprop="thumbnail" alt="Forster's Hawkfish - Paracirrhites forsteri" data-id="47" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-194.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#paracirrhites">Paracirrhites</a> <a href="/./galleries/#forsteri">forsteri</a></figcaption>   
+    <h3><a href="/./galleries/#forsters">Forster's</a> <a href="/./galleries/#hawkfish">Hawkfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Forster's Hawkfish - <em>Paracirrhites forsteri</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-177.jpg">
+    <img itemprop="thumbnail" alt="Forster's Hawkfish - Paracirrhites forsteri" data-id="48" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-177.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#paracirrhites">Paracirrhites</a> <a href="/./galleries/#forsteri">forsteri</a></figcaption>   
+    <h3><a href="/./galleries/#forsters">Forster's</a> <a href="/./galleries/#hawkfish">Hawkfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Moontail bullseye - <em>Myripristis murdjan</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-201.jpg">
+    <img itemprop="thumbnail" alt="Moontail bullseye - Myripristis murdjan" data-id="49" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-201.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#myripristis">Myripristis</a> <a href="/./galleries/#murdjan">murdjan</a></figcaption>   
+    <h3><a href="/./galleries/#moontail">Moontail</a> <a href="/./galleries/#bullseye">bullseye</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Orchid dottyback - <em>Pseudochromis fridmani</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-217.jpg">
+    <img itemprop="thumbnail" alt="Orchid dottyback - Pseudochromis fridmani" data-id="50" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-217.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pseudochromis">Pseudochromis</a> <a href="/./galleries/#fridmani">fridmani</a></figcaption>   
+    <h3><a href="/./galleries/#orchid">Orchid</a> <a href="/./galleries/#dottyback">dottyback</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red lionfish - <em>Pterois volitans</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-281.jpg">
+    <img itemprop="thumbnail" alt="Red lionfish - Pterois volitans" data-id="51" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-281.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pterois">Pterois</a> <a href="/./galleries/#volitans">volitans</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#lionfish">lionfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Slingjaw wrasse - <em>Epibulus insidiator</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-171.jpg">
+    <img itemprop="thumbnail" alt="Slingjaw wrasse - Epibulus insidiator" data-id="52" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-171.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#epibulus">Epibulus</a> <a href="/./galleries/#insidiator">insidiator</a></figcaption>   
+    <h3><a href="/./galleries/#slingjaw">Slingjaw</a> <a href="/./galleries/#wrasse">wrasse</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Striated surgeonfish - <em>Ctenochaetus striatus</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-161.jpg">
+    <img itemprop="thumbnail" alt="Striated surgeonfish - Ctenochaetus striatus" data-id="53" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-161.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#ctenochaetus">Ctenochaetus</a> <a href="/./galleries/#striatus">striatus</a></figcaption>   
+    <h3><a href="/./galleries/#striated">Striated</a> <a href="/./galleries/#surgeonfish">surgeonfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-294.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="54" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-294.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-266.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="55" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-266.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Orchid dottyback - <em>Pseudochromis fridmani</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-216.jpg">
+    <img itemprop="thumbnail" alt="Orchid dottyback - Pseudochromis fridmani" data-id="56" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-216.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pseudochromis">Pseudochromis</a> <a href="/./galleries/#fridmani">fridmani</a></figcaption>   
+    <h3><a href="/./galleries/#orchid">Orchid</a> <a href="/./galleries/#dottyback">dottyback</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Pygmy sweeper - <em>Parapriacanthus ransonnet</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-212.jpg">
+    <img itemprop="thumbnail" alt="Pygmy sweeper - Parapriacanthus ransonnet" data-id="57" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-212.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#parapriacanthus">Parapriacanthus</a> <a href="/./galleries/#ransonnet">ransonnet</a></figcaption>   
+    <h3><a href="/./galleries/#pygmy">Pygmy</a> <a href="/./galleries/#sweeper">sweeper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Twoband anemonefish - <em>Amphiprion bicinctus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-238.jpg">
+    <img itemprop="thumbnail" alt="Twoband anemonefish - Amphiprion bicinctus" data-id="58" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-238.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amphiprion">Amphiprion</a> <a href="/./galleries/#bicinctus">bicinctus</a></figcaption>   
+    <h3><a href="/./galleries/#twoband">Twoband</a> <a href="/./galleries/#anemonefish">anemonefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-243.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="59" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-243.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Black-spot Snapper - <em>Lutjanus ehrenbergii</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-236.jpg">
+    <img itemprop="thumbnail" alt="Black-spot Snapper - Lutjanus ehrenbergii" data-id="60" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-236.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#lutjanus">Lutjanus</a> <a href="/./galleries/#ehrenbergii">ehrenbergii</a></figcaption>   
+    <h3><a href="/./galleries/#black-spot">Black-spot</a> <a href="/./galleries/#snapper">Snapper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluebanded Angelfish - <em>Pygoplites diacanthus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-167.jpg">
+    <img itemprop="thumbnail" alt="Bluebanded Angelfish - Pygoplites diacanthus" data-id="61" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-167.jpg" style="width: 274px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pygoplites">Pygoplites</a> <a href="/./galleries/#diacanthus">diacanthus</a></figcaption>   
+    <h3><a href="/./galleries/#bluebanded">Bluebanded</a> <a href="/./galleries/#angelfish">Angelfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluebanded Angelfish - <em>Pygoplites diacanthus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-241.jpg">
+    <img itemprop="thumbnail" alt="Bluebanded Angelfish - Pygoplites diacanthus" data-id="62" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-241.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pygoplites">Pygoplites</a> <a href="/./galleries/#diacanthus">diacanthus</a></figcaption>   
+    <h3><a href="/./galleries/#bluebanded">Bluebanded</a> <a href="/./galleries/#angelfish">Angelfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Redbreast wrasse - <em>Cheilinus fasciatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-184.jpg">
+    <img itemprop="thumbnail" alt="Redbreast wrasse - Cheilinus fasciatus" data-id="63" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-184.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cheilinus">Cheilinus</a> <a href="/./galleries/#fasciatus">fasciatus</a></figcaption>   
+    <h3><a href="/./galleries/#redbreast">Redbreast</a> <a href="/./galleries/#wrasse">wrasse</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Twoband anemonefish - <em>Amphiprion bicinctus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-237.jpg">
+    <img itemprop="thumbnail" alt="Twoband anemonefish - Amphiprion bicinctus" data-id="64" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-237.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amphiprion">Amphiprion</a> <a href="/./galleries/#bicinctus">bicinctus</a></figcaption>   
+    <h3><a href="/./galleries/#twoband">Twoband</a> <a href="/./galleries/#anemonefish">anemonefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Twoband anemonefish - <em>Amphiprion bicinctus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-174.jpg">
+    <img itemprop="thumbnail" alt="Twoband anemonefish - Amphiprion bicinctus" data-id="65" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-174.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amphiprion">Amphiprion</a> <a href="/./galleries/#bicinctus">bicinctus</a></figcaption>   
+    <h3><a href="/./galleries/#twoband">Twoband</a> <a href="/./galleries/#anemonefish">anemonefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-168.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="66" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-168.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluespotted ribbontail ray - <em>Taeniura lymma</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-253.jpg">
+    <img itemprop="thumbnail" alt="Bluespotted ribbontail ray - Taeniura lymma" data-id="67" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-253.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#taeniura">Taeniura</a> <a href="/./galleries/#lymma">lymma</a></figcaption>   
+    <h3><a href="/./galleries/#bluespotted">Bluespotted</a> <a href="/./galleries/#ribbontail">ribbontail</a> <a href="/./galleries/#ray">ray</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Dusky Sailfin Tang - <em>Zebrasoma xanthurum</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-145.jpg">
+    <img itemprop="thumbnail" alt="Dusky Sailfin Tang - Zebrasoma xanthurum" data-id="68" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-145.jpg" style="width: 300px; height: 197px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#zebrasoma">Zebrasoma</a> <a href="/./galleries/#xanthurum">xanthurum</a></figcaption>   
+    <h3><a href="/./galleries/#dusky">Dusky</a> <a href="/./galleries/#sailfin">Sailfin</a> <a href="/./galleries/#tang">Tang</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Masked puffer - <em>Arothron diadematus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-143.jpg">
+    <img itemprop="thumbnail" alt="Masked puffer - Arothron diadematus" data-id="69" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-143.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#arothron">Arothron</a> <a href="/./galleries/#diadematus">diadematus</a></figcaption>   
+    <h3><a href="/./galleries/#masked">Masked</a> <a href="/./galleries/#puffer">puffer</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea chevron butterflyfish - <em>Chaetodon Paucifasciatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-169.jpg">
+    <img itemprop="thumbnail" alt="Red Sea chevron butterflyfish - Chaetodon Paucifasciatus" data-id="70" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-169.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chaetodon">Chaetodon</a> <a href="/./galleries/#paucifasciatus">Paucifasciatus</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#chevron">chevron</a> <a href="/./galleries/#butterflyfish">butterflyfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Redbreast wrasse - <em>Cheilinus fasciatus</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-274.jpg">
+    <img itemprop="thumbnail" alt="Redbreast wrasse - Cheilinus fasciatus" data-id="71" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-274.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cheilinus">Cheilinus</a> <a href="/./galleries/#fasciatus">fasciatus</a></figcaption>   
+    <h3><a href="/./galleries/#redbreast">Redbreast</a> <a href="/./galleries/#wrasse">wrasse</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Spanish Dancer - <em>Hexabranchus sanguineus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-192.jpg">
+    <img itemprop="thumbnail" alt="Spanish Dancer - Hexabranchus sanguineus" data-id="72" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-192.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#hexabranchus">Hexabranchus</a> <a href="/./galleries/#sanguineus">sanguineus</a></figcaption>   
+    <h3><a href="/./galleries/#spanish">Spanish</a> <a href="/./galleries/#dancer">Dancer</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Suez fusilier - <em>Caesio suevica</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-182.jpg">
+    <img itemprop="thumbnail" alt="Suez fusilier - Caesio suevica" data-id="73" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-182.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#caesio">Caesio</a> <a href="/./galleries/#suevica">suevica</a></figcaption>   
+    <h3><a href="/./galleries/#suez">Suez</a> <a href="/./galleries/#fusilier">fusilier</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-260.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="74" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-260.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluetail trunkfish - <em>Ostracion cyanurus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-272.jpg">
+    <img itemprop="thumbnail" alt="Bluetail trunkfish - Ostracion cyanurus" data-id="75" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-272.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#ostracion">Ostracion</a> <a href="/./galleries/#cyanurus">cyanurus</a></figcaption>   
+    <h3><a href="/./galleries/#bluetail">Bluetail</a> <a href="/./galleries/#trunkfish">trunkfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-230.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="76" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-230.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-265.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="77" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-265.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Algae - <em>Tydemania expeditionis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-226.jpg">
+    <img itemprop="thumbnail" alt="Algae - Tydemania expeditionis" data-id="78" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-226.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#tydemania">Tydemania</a> <a href="/./galleries/#expeditionis">expeditionis</a></figcaption>   
+    <h3><a href="/./galleries/#algae">Algae</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Argus Grouper - <em>Cephalopholis argus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-204.jpg">
+    <img itemprop="thumbnail" alt="Argus Grouper - Cephalopholis argus" data-id="79" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-204.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cephalopholis">Cephalopholis</a> <a href="/./galleries/#argus">argus</a></figcaption>   
+    <h3><a href="/./galleries/#argus">Argus</a> <a href="/./galleries/#grouper">Grouper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Black and white snapper - <em>Macalor niger</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-200.jpg">
+    <img itemprop="thumbnail" alt="Black and white snapper - Macalor niger" data-id="80" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-200.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#macalor">Macalor</a> <a href="/./galleries/#niger">niger</a></figcaption>   
+    <h3><a href="/./galleries/#black">Black</a> <a href="/./galleries/#and">and</a> <a href="/./galleries/#white">white</a> <a href="/./galleries/#snapper">snapper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluebanded Angelfish - <em>Pygoplites diacanthus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-205.jpg">
+    <img itemprop="thumbnail" alt="Bluebanded Angelfish - Pygoplites diacanthus" data-id="81" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-205.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pygoplites">Pygoplites</a> <a href="/./galleries/#diacanthus">diacanthus</a></figcaption>   
+    <h3><a href="/./galleries/#bluebanded">Bluebanded</a> <a href="/./galleries/#angelfish">Angelfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Chocolatedip chromis - <em>Chromis dimidiata</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-162.jpg">
+    <img itemprop="thumbnail" alt="Chocolatedip chromis - Chromis dimidiata" data-id="82" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-162.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chromis">Chromis</a> <a href="/./galleries/#dimidiata">dimidiata</a></figcaption>   
+    <h3><a href="/./galleries/#chocolatedip">Chocolatedip</a> <a href="/./galleries/#chromis">chromis</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Clown coris - <em>Coris aygula</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-144.jpg">
+    <img itemprop="thumbnail" alt="Clown coris - Coris aygula" data-id="83" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-144.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#coris">Coris</a> <a href="/./galleries/#aygula">aygula</a></figcaption>   
+    <h3><a href="/./galleries/#clown">Clown</a> <a href="/./galleries/#coris">coris</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Clown coris - <em>Coris aygula</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-286.jpg">
+    <img itemprop="thumbnail" alt="Clown coris - Coris aygula" data-id="84" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-286.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#coris">Coris</a> <a href="/./galleries/#aygula">aygula</a></figcaption>   
+    <h3><a href="/./galleries/#clown">Clown</a> <a href="/./galleries/#coris">coris</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Clown coris - <em>Coris aygula</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-287.jpg">
+    <img itemprop="thumbnail" alt="Clown coris - Coris aygula" data-id="85" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-287.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#coris">Coris</a> <a href="/./galleries/#aygula">aygula</a></figcaption>   
+    <h3><a href="/./galleries/#clown">Clown</a> <a href="/./galleries/#coris">coris</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Common spider conch - <em>Lambis lambis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-290.jpg">
+    <img itemprop="thumbnail" alt="Common spider conch - Lambis lambis" data-id="86" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-290.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#lambis">Lambis</a> <a href="/./galleries/#lambis">lambis</a></figcaption>   
+    <h3><a href="/./galleries/#common">Common</a> <a href="/./galleries/#spider">spider</a> <a href="/./galleries/#conch">conch</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Dusky Sailfin Tang - <em>Zebrasoma xanthurum</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-158.jpg">
+    <img itemprop="thumbnail" alt="Dusky Sailfin Tang - Zebrasoma xanthurum" data-id="87" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-158.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#zebrasoma">Zebrasoma</a> <a href="/./galleries/#xanthurum">xanthurum</a></figcaption>   
+    <h3><a href="/./galleries/#dusky">Dusky</a> <a href="/./galleries/#sailfin">Sailfin</a> <a href="/./galleries/#tang">Tang</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Estuary Rock-cod - <em>Epinephelus tauvina</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-233.jpg">
+    <img itemprop="thumbnail" alt="Estuary Rock-cod - Epinephelus tauvina" data-id="88" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-233.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#epinephelus">Epinephelus</a> <a href="/./galleries/#tauvina">tauvina</a></figcaption>   
+    <h3><a href="/./galleries/#estuary">Estuary</a> <a href="/./galleries/#rock-cod">Rock-cod</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Indo-Pacific sergeant - <em>Abudefduf vaigiensis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-251.jpg">
+    <img itemprop="thumbnail" alt="Indo-Pacific sergeant - Abudefduf vaigiensis" data-id="89" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-251.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#abudefduf">Abudefduf</a> <a href="/./galleries/#vaigiensis">vaigiensis</a></figcaption>   
+    <h3><a href="/./galleries/#indo-pacific">Indo-Pacific</a> <a href="/./galleries/#sergeant">sergeant</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Indo-Pacific sergeant - <em>Abudefduf vaigiensis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-240.jpg">
+    <img itemprop="thumbnail" alt="Indo-Pacific sergeant - Abudefduf vaigiensis" data-id="90" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-240.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#abudefduf">Abudefduf</a> <a href="/./galleries/#vaigiensis">vaigiensis</a></figcaption>   
+    <h3><a href="/./galleries/#indo-pacific">Indo-Pacific</a> <a href="/./galleries/#sergeant">sergeant</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Masked puffer - <em>Arothron diadematus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-224.jpg">
+    <img itemprop="thumbnail" alt="Masked puffer - Arothron diadematus" data-id="91" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-224.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#arothron">Arothron</a> <a href="/./galleries/#diadematus">diadematus</a></figcaption>   
+    <h3><a href="/./galleries/#masked">Masked</a> <a href="/./galleries/#puffer">puffer</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Orchid dottyback - <em>Pseudochromis fridmani</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-220.jpg">
+    <img itemprop="thumbnail" alt="Orchid dottyback - Pseudochromis fridmani" data-id="92" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-220.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pseudochromis">Pseudochromis</a> <a href="/./galleries/#fridmani">fridmani</a></figcaption>   
+    <h3><a href="/./galleries/#orchid">Orchid</a> <a href="/./galleries/#dottyback">dottyback</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea Sailfin Tang - <em>Zebrasoma desjardinii</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-187.jpg">
+    <img itemprop="thumbnail" alt="Red Sea Sailfin Tang - Zebrasoma desjardinii" data-id="93" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-187.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#zebrasoma">Zebrasoma</a> <a href="/./galleries/#desjardinii">desjardinii</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#sailfin">Sailfin</a> <a href="/./galleries/#tang">Tang</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea bannerfish - <em>Heniochus intermedius</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-219.jpg">
+    <img itemprop="thumbnail" alt="Red Sea bannerfish - Heniochus intermedius" data-id="94" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-219.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#heniochus">Heniochus</a> <a href="/./galleries/#intermedius">intermedius</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#bannerfish">bannerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea bannerfish - <em>Heniochus intermedius</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-164.jpg">
+    <img itemprop="thumbnail" alt="Red Sea bannerfish - Heniochus intermedius" data-id="95" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-164.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#heniochus">Heniochus</a> <a href="/./galleries/#intermedius">intermedius</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#bannerfish">bannerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea chevron butterflyfish - <em>Chaetodon Paucifasciatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-229.jpg">
+    <img itemprop="thumbnail" alt="Red Sea chevron butterflyfish - Chaetodon Paucifasciatus" data-id="96" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-229.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chaetodon">Chaetodon</a> <a href="/./galleries/#paucifasciatus">Paucifasciatus</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#chevron">chevron</a> <a href="/./galleries/#butterflyfish">butterflyfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea melon butterflyfish - <em>Chaetodon austriacus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-228.jpg">
+    <img itemprop="thumbnail" alt="Red Sea melon butterflyfish - Chaetodon austriacus" data-id="97" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-228.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chaetodon">Chaetodon</a> <a href="/./galleries/#austriacus">austriacus</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#melon">melon</a> <a href="/./galleries/#butterflyfish">butterflyfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Snapper - <em>Lutjanus bohar</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-183.jpg">
+    <img itemprop="thumbnail" alt="Red Snapper - Lutjanus bohar" data-id="98" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-183.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#lutjanus">Lutjanus</a> <a href="/./galleries/#bohar">bohar</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#snapper">Snapper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red lionfish - <em>Pterois volitans</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-282.jpg">
+    <img itemprop="thumbnail" alt="Red lionfish - Pterois volitans" data-id="99" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-282.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pterois">Pterois</a> <a href="/./galleries/#volitans">volitans</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#lionfish">lionfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Redfin Parrotfish - <em>Sparisoma rubripinne</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-149.jpg">
+    <img itemprop="thumbnail" alt="Redfin Parrotfish - Sparisoma rubripinne" data-id="100" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-149.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#sparisoma">Sparisoma</a> <a href="/./galleries/#rubripinne">rubripinne</a></figcaption>   
+    <h3><a href="/./galleries/#redfin">Redfin</a> <a href="/./galleries/#parrotfish">Parrotfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Slingjaw wrasse - <em>Epibulus insidiator</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-285.jpg">
+    <img itemprop="thumbnail" alt="Slingjaw wrasse - Epibulus insidiator" data-id="101" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-285.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#epibulus">Epibulus</a> <a href="/./galleries/#insidiator">insidiator</a></figcaption>   
+    <h3><a href="/./galleries/#slingjaw">Slingjaw</a> <a href="/./galleries/#wrasse">wrasse</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Speckled sandperch - <em>Parapercis hexophtalma</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-197.jpg">
+    <img itemprop="thumbnail" alt="Speckled sandperch - Parapercis hexophtalma" data-id="102" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-197.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#parapercis">Parapercis</a> <a href="/./galleries/#hexophtalma">hexophtalma</a></figcaption>   
+    <h3><a href="/./galleries/#speckled">Speckled</a> <a href="/./galleries/#sandperch">sandperch</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Suez fusilier - <em>Caesio suevica</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-176.jpg">
+    <img itemprop="thumbnail" alt="Suez fusilier - Caesio suevica" data-id="103" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-176.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#caesio">Caesio</a> <a href="/./galleries/#suevica">suevica</a></figcaption>   
+    <h3><a href="/./galleries/#suez">Suez</a> <a href="/./galleries/#fusilier">fusilier</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Twoband anemonefish - <em>Amphiprion bicinctus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-175.jpg">
+    <img itemprop="thumbnail" alt="Twoband anemonefish - Amphiprion bicinctus" data-id="104" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-175.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amphiprion">Amphiprion</a> <a href="/./galleries/#bicinctus">bicinctus</a></figcaption>   
+    <h3><a href="/./galleries/#twoband">Twoband</a> <a href="/./galleries/#anemonefish">anemonefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Whitebelly damselfish - <em>Amblyglyphidodon leucogaster</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-153.jpg">
+    <img itemprop="thumbnail" alt="Whitebelly damselfish - Amblyglyphidodon leucogaster" data-id="105" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-153.jpg" style="width: 300px; height: 190px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amblyglyphidodon">Amblyglyphidodon</a> <a href="/./galleries/#leucogaster">leucogaster</a></figcaption>   
+    <h3><a href="/./galleries/#whitebelly">Whitebelly</a> <a href="/./galleries/#damselfish">damselfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellow-spotted triggerfish - <em>Pseudobalistes fuscus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-293.jpg">
+    <img itemprop="thumbnail" alt="Yellow-spotted triggerfish - Pseudobalistes fuscus" data-id="106" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-293.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pseudobalistes">Pseudobalistes</a> <a href="/./galleries/#fuscus">fuscus</a></figcaption>   
+    <h3><a href="/./galleries/#yellow-spotted">Yellow-spotted</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-258.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="107" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-258.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-242.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="108" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-242.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-262.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="109" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-262.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em>Comaster schlegeli</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-193.jpg">
+    <img itemprop="thumbnail" alt=" - Comaster schlegeli" data-id="110" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-193.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#comaster">Comaster</a> <a href="/./galleries/#schlegeli">schlegeli</a></figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-244.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="111" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-244.jpg" style="width: 300px; height: 169px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em>Cheilodipterus quinquelineatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-154.jpg">
+    <img itemprop="thumbnail" alt=" - Cheilodipterus quinquelineatus" data-id="112" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-154.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cheilodipterus">Cheilodipterus</a> <a href="/./galleries/#quinquelineatus">quinquelineatus</a></figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-259.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="113" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-259.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red lionfish - <em>Pterois volitans</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-214.jpg">
+    <img itemprop="thumbnail" alt="Red lionfish - Pterois volitans" data-id="114" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-214.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pterois">Pterois</a> <a href="/./galleries/#volitans">volitans</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#lionfish">lionfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Twoband anemonefish - <em>Amphiprion bicinctus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-185.jpg">
+    <img itemprop="thumbnail" alt="Twoband anemonefish - Amphiprion bicinctus" data-id="115" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-185.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amphiprion">Amphiprion</a> <a href="/./galleries/#bicinctus">bicinctus</a></figcaption>   
+    <h3><a href="/./galleries/#twoband">Twoband</a> <a href="/./galleries/#anemonefish">anemonefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-256.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="116" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-256.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-261.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="117" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-261.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-280.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="118" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-280.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Argus Grouper - <em>Cephalopholis argus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-203.jpg">
+    <img itemprop="thumbnail" alt="Argus Grouper - Cephalopholis argus" data-id="119" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-203.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cephalopholis">Cephalopholis</a> <a href="/./galleries/#argus">argus</a></figcaption>   
+    <h3><a href="/./galleries/#argus">Argus</a> <a href="/./galleries/#grouper">Grouper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bald glassy - <em>Ambassis gymnocephalus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-208.jpg">
+    <img itemprop="thumbnail" alt="Bald glassy - Ambassis gymnocephalus" data-id="120" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-208.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#ambassis">Ambassis</a> <a href="/./galleries/#gymnocephalus">gymnocephalus</a></figcaption>   
+    <h3><a href="/./galleries/#bald">Bald</a> <a href="/./galleries/#glassy">glassy</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Black-spot Snapper - <em>Lutjanus ehrenbergii</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-235.jpg">
+    <img itemprop="thumbnail" alt="Black-spot Snapper - Lutjanus ehrenbergii" data-id="121" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-235.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#lutjanus">Lutjanus</a> <a href="/./galleries/#ehrenbergii">ehrenbergii</a></figcaption>   
+    <h3><a href="/./galleries/#black-spot">Black-spot</a> <a href="/./galleries/#snapper">Snapper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Blackback butterflyfish - <em>Chaetodon melannotus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-195.jpg">
+    <img itemprop="thumbnail" alt="Blackback butterflyfish - Chaetodon melannotus" data-id="122" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-195.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chaetodon">Chaetodon</a> <a href="/./galleries/#melannotus">melannotus</a></figcaption>   
+    <h3><a href="/./galleries/#blackback">Blackback</a> <a href="/./galleries/#butterflyfish">butterflyfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluespotted ribbontail ray - <em>Taeniura lymma</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-199.jpg">
+    <img itemprop="thumbnail" alt="Bluespotted ribbontail ray - Taeniura lymma" data-id="123" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-199.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#taeniura">Taeniura</a> <a href="/./galleries/#lymma">lymma</a></figcaption>   
+    <h3><a href="/./galleries/#bluespotted">Bluespotted</a> <a href="/./galleries/#ribbontail">ribbontail</a> <a href="/./galleries/#ray">ray</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bluespotted ribbontail ray - <em>Taeniura lymma</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-269.jpg">
+    <img itemprop="thumbnail" alt="Bluespotted ribbontail ray - Taeniura lymma" data-id="124" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-269.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#taeniura">Taeniura</a> <a href="/./galleries/#lymma">lymma</a></figcaption>   
+    <h3><a href="/./galleries/#bluespotted">Bluespotted</a> <a href="/./galleries/#ribbontail">ribbontail</a> <a href="/./galleries/#ray">ray</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Bulb-entacle sea anemone - <em>Entacmaea quadricolor</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-279.jpg">
+    <img itemprop="thumbnail" alt="Bulb-entacle sea anemone - Entacmaea quadricolor" data-id="125" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-279.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#entacmaea">Entacmaea</a> <a href="/./galleries/#quadricolor">quadricolor</a></figcaption>   
+    <h3><a href="/./galleries/#bulb-entacle">Bulb-entacle</a> <a href="/./galleries/#sea">sea</a> <a href="/./galleries/#anemone">anemone</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Chocolatedip chromis - <em>Chromis dimidiata</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-156.jpg">
+    <img itemprop="thumbnail" alt="Chocolatedip chromis - Chromis dimidiata" data-id="126" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-156.jpg" style="width: 294px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chromis">Chromis</a> <a href="/./galleries/#dimidiata">dimidiata</a></figcaption>   
+    <h3><a href="/./galleries/#chocolatedip">Chocolatedip</a> <a href="/./galleries/#chromis">chromis</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Common Lyretail-cod - <em>Variola louti</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-268.jpg">
+    <img itemprop="thumbnail" alt="Common Lyretail-cod - Variola louti" data-id="127" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-268.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#variola">Variola</a> <a href="/./galleries/#louti">louti</a></figcaption>   
+    <h3><a href="/./galleries/#common">Common</a> <a href="/./galleries/#lyretail-cod">Lyretail-cod</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Common Lyretail-cod - <em>Variola louti</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-247.jpg">
+    <img itemprop="thumbnail" alt="Common Lyretail-cod - Variola louti" data-id="128" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-247.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#variola">Variola</a> <a href="/./galleries/#louti">louti</a></figcaption>   
+    <h3><a href="/./galleries/#common">Common</a> <a href="/./galleries/#lyretail-cod">Lyretail-cod</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Common Lyretail-cod - <em>Variola louti</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-142.jpg">
+    <img itemprop="thumbnail" alt="Common Lyretail-cod - Variola louti" data-id="129" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-142.jpg" style="width: 300px; height: 194px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#variola">Variola</a> <a href="/./galleries/#louti">louti</a></figcaption>   
+    <h3><a href="/./galleries/#common">Common</a> <a href="/./galleries/#lyretail-cod">Lyretail-cod</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Common parrotfish - <em>Scarus psittacus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-234.jpg">
+    <img itemprop="thumbnail" alt="Common parrotfish - Scarus psittacus" data-id="130" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-234.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#scarus">Scarus</a> <a href="/./galleries/#psittacus">psittacus</a></figcaption>   
+    <h3><a href="/./galleries/#common">Common</a> <a href="/./galleries/#parrotfish">parrotfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Emperor Angelfish - <em>Pomacanthus imperator</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-172.jpg">
+    <img itemprop="thumbnail" alt="Emperor Angelfish - Pomacanthus imperator" data-id="131" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-172.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pomacanthus">Pomacanthus</a> <a href="/./galleries/#imperator">imperator</a></figcaption>   
+    <h3><a href="/./galleries/#emperor">Emperor</a> <a href="/./galleries/#angelfish">Angelfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Forster's Hawkfish - <em>Paracirrhites forsteri</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-179.jpg">
+    <img itemprop="thumbnail" alt="Forster's Hawkfish - Paracirrhites forsteri" data-id="132" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-179.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#paracirrhites">Paracirrhites</a> <a href="/./galleries/#forsteri">forsteri</a></figcaption>   
+    <h3><a href="/./galleries/#forsters">Forster's</a> <a href="/./galleries/#hawkfish">Hawkfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Giant Clam - <em>Tridacna gigas</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-270.jpg">
+    <img itemprop="thumbnail" alt="Giant Clam - Tridacna gigas" data-id="133" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-270.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#tridacna">Tridacna</a> <a href="/./galleries/#gigas">gigas</a></figcaption>   
+    <h3><a href="/./galleries/#giant">Giant</a> <a href="/./galleries/#clam">Clam</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Giant Clam - <em>Tridacna gigas</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-271.jpg">
+    <img itemprop="thumbnail" alt="Giant Clam - Tridacna gigas" data-id="134" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-271.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#tridacna">Tridacna</a> <a href="/./galleries/#gigas">gigas</a></figcaption>   
+    <h3><a href="/./galleries/#giant">Giant</a> <a href="/./galleries/#clam">Clam</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Golden butterflyfish - <em>Chaetodon semilarvatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-147.jpg">
+    <img itemprop="thumbnail" alt="Golden butterflyfish - Chaetodon semilarvatus" data-id="135" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-147.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#chaetodon">Chaetodon</a> <a href="/./galleries/#semilarvatus">semilarvatus</a></figcaption>   
+    <h3><a href="/./galleries/#golden">Golden</a> <a href="/./galleries/#butterflyfish">butterflyfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Goldsaddle goatfish - <em>Parupeneus cyclostomus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-157.jpg">
+    <img itemprop="thumbnail" alt="Goldsaddle goatfish - Parupeneus cyclostomus" data-id="136" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-157.jpg" style="width: 286px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#parupeneus">Parupeneus</a> <a href="/./galleries/#cyclostomus">cyclostomus</a></figcaption>   
+    <h3><a href="/./galleries/#goldsaddle">Goldsaddle</a> <a href="/./galleries/#goatfish">goatfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Indian mackerel - <em>Rastrelliger kanagurta</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-188.jpg">
+    <img itemprop="thumbnail" alt="Indian mackerel - Rastrelliger kanagurta" data-id="137" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-188.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#rastrelliger">Rastrelliger</a> <a href="/./galleries/#kanagurta">kanagurta</a></figcaption>   
+    <h3><a href="/./galleries/#indian">Indian</a> <a href="/./galleries/#mackerel">mackerel</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Long-barbel goatfish - <em>Parupeneus macronemus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-191.jpg">
+    <img itemprop="thumbnail" alt="Long-barbel goatfish - Parupeneus macronemus" data-id="138" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-191.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#parupeneus">Parupeneus</a> <a href="/./galleries/#macronemus">macronemus</a></figcaption>   
+    <h3><a href="/./galleries/#long-barbel">Long-barbel</a> <a href="/./galleries/#goatfish">goatfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Niphates digitalis - <em>Niphates digitalis</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-138.jpg">
+    <img itemprop="thumbnail" alt="Niphates digitalis - Niphates digitalis" data-id="139" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-138.jpg" style="width: 294px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#niphates">Niphates</a> <a href="/./galleries/#digitalis">digitalis</a></figcaption>   
+    <h3><a href="/./galleries/#niphates">Niphates</a> <a href="/./galleries/#digitalis">digitalis</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="One-stripe fusilier - <em>Pterocaesio tessellata</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-231.jpg">
+    <img itemprop="thumbnail" alt="One-stripe fusilier - Pterocaesio tessellata" data-id="140" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-231.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pterocaesio">Pterocaesio</a> <a href="/./galleries/#tessellata">tessellata</a></figcaption>   
+    <h3><a href="/./galleries/#one-stripe">One-stripe</a> <a href="/./galleries/#fusilier">fusilier</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Pygmy sweeper - <em>Parapriacanthus ransonnet</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-211.jpg">
+    <img itemprop="thumbnail" alt="Pygmy sweeper - Parapriacanthus ransonnet" data-id="141" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-211.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#parapriacanthus">Parapriacanthus</a> <a href="/./galleries/#ransonnet">ransonnet</a></figcaption>   
+    <h3><a href="/./galleries/#pygmy">Pygmy</a> <a href="/./galleries/#sweeper">sweeper</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea Sailfin Tang - <em>Zebrasoma desjardinii</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-189.jpg">
+    <img itemprop="thumbnail" alt="Red Sea Sailfin Tang - Zebrasoma desjardinii" data-id="142" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-189.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#zebrasoma">Zebrasoma</a> <a href="/./galleries/#desjardinii">desjardinii</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#sailfin">Sailfin</a> <a href="/./galleries/#tang">Tang</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Red Sea mimic blenny - <em>Ecsenius gravieri</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-170.jpg">
+    <img itemprop="thumbnail" alt="Red Sea mimic blenny - Ecsenius gravieri" data-id="143" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-170.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#ecsenius">Ecsenius</a> <a href="/./galleries/#gravieri">gravieri</a></figcaption>   
+    <h3><a href="/./galleries/#red">Red</a> <a href="/./galleries/#sea">Sea</a> <a href="/./galleries/#mimic">mimic</a> <a href="/./galleries/#blenny">blenny</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Spanish Dancer - <em>Hexabranchus sanguineus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-295.jpg">
+    <img itemprop="thumbnail" alt="Spanish Dancer - Hexabranchus sanguineus" data-id="144" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-295.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#hexabranchus">Hexabranchus</a> <a href="/./galleries/#sanguineus">sanguineus</a></figcaption>   
+    <h3><a href="/./galleries/#spanish">Spanish</a> <a href="/./galleries/#dancer">Dancer</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Spanish Dancer - <em>Hexabranchus sanguineus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-277.jpg">
+    <img itemprop="thumbnail" alt="Spanish Dancer - Hexabranchus sanguineus" data-id="145" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-277.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#hexabranchus">Hexabranchus</a> <a href="/./galleries/#sanguineus">sanguineus</a></figcaption>   
+    <h3><a href="/./galleries/#spanish">Spanish</a> <a href="/./galleries/#dancer">Dancer</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Steinitz Prawn Goby - <em>Amblyeleotris steinitzi</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-196.jpg">
+    <img itemprop="thumbnail" alt="Steinitz Prawn Goby - Amblyeleotris steinitzi" data-id="146" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-196.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amblyeleotris">Amblyeleotris</a> <a href="/./galleries/#steinitzi">steinitzi</a></figcaption>   
+    <h3><a href="/./galleries/#steinitz">Steinitz</a> <a href="/./galleries/#prawn">Prawn</a> <a href="/./galleries/#goby">Goby</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Striated surgeonfish - <em>Ctenochaetus striatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-222.jpg">
+    <img itemprop="thumbnail" alt="Striated surgeonfish - Ctenochaetus striatus" data-id="147" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-222.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#ctenochaetus">Ctenochaetus</a> <a href="/./galleries/#striatus">striatus</a></figcaption>   
+    <h3><a href="/./galleries/#striated">Striated</a> <a href="/./galleries/#surgeonfish">surgeonfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Suez fusilier - <em>Caesio suevica</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-181.jpg">
+    <img itemprop="thumbnail" alt="Suez fusilier - Caesio suevica" data-id="148" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-181.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#caesio">Caesio</a> <a href="/./galleries/#suevica">suevica</a></figcaption>   
+    <h3><a href="/./galleries/#suez">Suez</a> <a href="/./galleries/#fusilier">fusilier</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Twoband anemonefish - <em>Amphiprion bicinctus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-186.jpg">
+    <img itemprop="thumbnail" alt="Twoband anemonefish - Amphiprion bicinctus" data-id="149" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-186.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amphiprion">Amphiprion</a> <a href="/./galleries/#bicinctus">bicinctus</a></figcaption>   
+    <h3><a href="/./galleries/#twoband">Twoband</a> <a href="/./galleries/#anemonefish">anemonefish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Whitebelly damselfish - <em>Amblyglyphidodon leucogaster</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-215.jpg">
+    <img itemprop="thumbnail" alt="Whitebelly damselfish - Amblyglyphidodon leucogaster" data-id="150" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-215.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#amblyglyphidodon">Amblyglyphidodon</a> <a href="/./galleries/#leucogaster">leucogaster</a></figcaption>   
+    <h3><a href="/./galleries/#whitebelly">Whitebelly</a> <a href="/./galleries/#damselfish">damselfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Whitetail dascyllus - <em>Dascyllus aruanus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-245.jpg">
+    <img itemprop="thumbnail" alt="Whitetail dascyllus - Dascyllus aruanus" data-id="151" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-245.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#dascyllus">Dascyllus</a> <a href="/./galleries/#aruanus">aruanus</a></figcaption>   
+    <h3><a href="/./galleries/#whitetail">Whitetail</a> <a href="/./galleries/#dascyllus">dascyllus</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellow-edged moray - <em>Gymnothorax flavimarginatus</em>" itemprop=contentUrl data-size="1060x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-297.jpg">
+    <img itemprop="thumbnail" alt="Yellow-edged moray - Gymnothorax flavimarginatus" data-id="152" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-297.jpg" style="width: 133px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#gymnothorax">Gymnothorax</a> <a href="/./galleries/#flavimarginatus">flavimarginatus</a></figcaption>   
+    <h3><a href="/./galleries/#yellow-edged">Yellow-edged</a> <a href="/./galleries/#moray">moray</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellow-spotted triggerfish - <em>Pseudobalistes fuscus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-291.jpg">
+    <img itemprop="thumbnail" alt="Yellow-spotted triggerfish - Pseudobalistes fuscus" data-id="153" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-291.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#pseudobalistes">Pseudobalistes</a> <a href="/./galleries/#fuscus">fuscus</a></figcaption>   
+    <h3><a href="/./galleries/#yellow-spotted">Yellow-spotted</a> <a href="/./galleries/#triggerfish">triggerfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-178.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="154" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-178.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-257.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="155" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-257.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellowspotted Burrfish - <em>Cyclichthys spilostylus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-264.jpg">
+    <img itemprop="thumbnail" alt="Yellowspotted Burrfish - Cyclichthys spilostylus" data-id="156" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-264.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#cyclichthys">Cyclichthys</a> <a href="/./galleries/#spilostylus">spilostylus</a></figcaption>   
+    <h3><a href="/./galleries/#yellowspotted">Yellowspotted</a> <a href="/./galleries/#burrfish">Burrfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellowstripe goatfish - <em>Mulloidichthys flavolineatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-276.jpg">
+    <img itemprop="thumbnail" alt="Yellowstripe goatfish - Mulloidichthys flavolineatus" data-id="157" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-276.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#mulloidichthys">Mulloidichthys</a> <a href="/./galleries/#flavolineatus">flavolineatus</a></figcaption>   
+    <h3><a href="/./galleries/#yellowstripe">Yellowstripe</a> <a href="/./galleries/#goatfish">goatfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellowstripe goatfish - <em>Mulloidichthys flavolineatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-275.jpg">
+    <img itemprop="thumbnail" alt="Yellowstripe goatfish - Mulloidichthys flavolineatus" data-id="158" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-275.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#mulloidichthys">Mulloidichthys</a> <a href="/./galleries/#flavolineatus">flavolineatus</a></figcaption>   
+    <h3><a href="/./galleries/#yellowstripe">Yellowstripe</a> <a href="/./galleries/#goatfish">goatfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption="Yellowstripe goatfish - <em>Mulloidichthys flavolineatus</em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-198.jpg">
+    <img itemprop="thumbnail" alt="Yellowstripe goatfish - Mulloidichthys flavolineatus" data-id="159" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-198.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description"><a href="/./galleries/#mulloidichthys">Mulloidichthys</a> <a href="/./galleries/#flavolineatus">flavolineatus</a></figcaption>   
+    <h3><a href="/./galleries/#yellowstripe">Yellowstripe</a> <a href="/./galleries/#goatfish">goatfish</a></h3>
+</figure>
+<figure class=img itemprop=associatedMedia itemtype=http://schema.org/ImageObject>
+    <a data-caption=" - <em></em>" itemprop=contentUrl data-size="2400x1600" href="https://olivier-colli.github.io/olifish-photos/img/img-218.jpg">
+    <img itemprop="thumbnail" alt=" - " data-id="160" src="https://olivier-colli.github.io/olifish-photos/thumb/thumb-218.jpg" style="width: 300px; height: 200px" title="egypte-coraya-baie-nov-2016">
+    </a>
+    <figcaption itemprop="caption description">-</figcaption>   
+    <h3>-</h3>
+</figure>
+
+</div>
+
+        </html>
+        
